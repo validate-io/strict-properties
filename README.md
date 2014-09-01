@@ -44,7 +44,7 @@ console.log( hasProperties( obj, props ) );
 * 	This method validates that the `value` is a plain `object` and returns `false` for any `value` types which are not plain JavaScript `objects`. 
 *	This method does __not__ climb the prototype chain.
 * 	The property list should be an `array`.
-*	The method returns `false` immediately upon encountered an unrecognized property.
+*	The method returns `false` immediately upon encountering an unrecognized property.
 
 
 ## Examples
