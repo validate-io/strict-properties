@@ -1,4 +1,4 @@
-strict-properties
+Strict Properties
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -19,15 +19,35 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var lib = require( 'validate.io-strict-properties' );
+var hasProperties = require( 'validate.io-strict-properties' );
+
+var obj = {
+	'beep': true,
+	'boop': false
+};
+
+var props = [
+	'beep',
+	'boop'
+];
+
+console.log( hasProperties( obj, props ) );
+// Returns true
+
+obj.baz = 'foo';
+console.log( hasProperties( obj, props ) );
+// Returns false
 ```
+
+## Notes
+
+* 	This method validates that the `value` is a plain `object` and returns `false` for any `value` types which are not plain JavaScript `objects`. 
+*	This method does __not__ climb the prototype chain.
+* 	The property list should be an `array`.
+*	The method returns `false` immediately upon encountered an unrecognized property.
 
 
 ## Examples
-
-``` javascript
-var lib = require( 'validate.io-strict-properties' );
-```
 
 To run the example code from the top-level application directory,
 
