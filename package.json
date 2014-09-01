@@ -1,6 +1,6 @@
 {
   "name": "validate.io-strict-properties",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Validates if a value only has specified properties.",
   "author": {
     "name": "Athan Reines",
