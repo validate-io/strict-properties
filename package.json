@@ -26,17 +26,24 @@
     "validate.io",
     "validate",
     "validation",
-    "validator"
+    "validator",
+    "object",
+    "properties"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/strict-properties/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "object-keys": "^1.0.3",
+    "validate.io-object": "^1.0.2"
+  },
   "devDependencies": {
     "chai": "1.x.x",
     "mocha": "1.x.x",
     "coveralls": "^2.11.1",
-    "istanbul": "^0.3.0"
+    "istanbul": "^0.3.0",
+    "jshint": "^2.5.10",
+    "jshint-stylish": "^1.0.0"
   },
   "licenses": [
     {

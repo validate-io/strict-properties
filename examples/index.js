@@ -1,3 +1,5 @@
+'use strict';
+
 var hasProperties = require( './../lib' );
 
 var obj = {
@@ -11,8 +13,8 @@ var props = [
 ];
 
 console.log( hasProperties( obj, props ) );
-// Returns true
+// returns true
 
 obj.baz = 'foo';
 console.log( hasProperties( obj, props ) );
-// Returns false
+// returns false

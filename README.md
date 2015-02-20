@@ -16,7 +16,33 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-To use the module,
+``` javascript
+var hasProperties = require( 'validate.io-strict-properties' );
+```
+
+
+#### hasProperties( obj, props )
+
+Validates if an input `object` has specified properties.
+
+``` javascript
+var obj = {'a': 0},
+	props = ['a'];
+
+var bool = hasProperties( obj, props );
+// returns true
+```
+
+
+## Notes
+
+* 	This method validates that the `value` is an `object` and returns `false` for any `value` types which are not JavaScript `objects`. 
+*	This method does __not__ climb the prototype chain.
+* 	The property list should be an `array`.
+*	The method returns `false` immediately upon encountering an unrecognized property.
+
+
+## Examples
 
 ``` javascript
 var hasProperties = require( 'validate.io-strict-properties' );
@@ -32,22 +58,12 @@ var props = [
 ];
 
 console.log( hasProperties( obj, props ) );
-// Returns true
+// returns true
 
 obj.baz = 'foo';
 console.log( hasProperties( obj, props ) );
-// Returns false
+// returns false
 ```
-
-## Notes
-
-* 	This method validates that the `value` is a plain `object` and returns `false` for any `value` types which are not plain JavaScript `objects`. 
-*	This method does __not__ climb the prototype chain.
-* 	The property list should be an `array`.
-*	The method returns `false` immediately upon encountering an unrecognized property.
-
-
-## Examples
 
 To run the example code from the top-level application directory,
 
@@ -60,7 +76,7 @@ $ node ./examples/index.js
 
 ### Unit
 
-Unit tests use the [Mocha](http://visionmedia.github.io/mocha) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
+Unit tests use the [Mocha](http://mochajs.org) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -80,16 +96,16 @@ $ make test-cov
 Istanbul creates a `./reports/coverage` directory. To access an HTML version of the report,
 
 ``` bash
-$ open reports/coverage/lcov-report/index.html
+$ make view-cov
 ```
 
 
+---
 ## License
 
 [MIT license](http://opensource.org/licenses/MIT). 
 
 
----
 ## Copyright
 
 Copyright &copy; 2014. Athan Reines.
