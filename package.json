@@ -28,7 +28,11 @@
     "validation",
     "validator",
     "object",
-    "properties"
+    "properties",
+    "valid",
+    "is",
+    "type",
+    "check"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/strict-properties/issues"
